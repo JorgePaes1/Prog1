@@ -34,3 +34,29 @@ def remove_gmail(cadastro,dominio):
         if dominio not in elemento['e-mail']:
             filtro.append(elemento)
     return filtro
+
+def filtrar_por_tipo(lista, tipo):
+    lista_filtrada = []
+    for item in lista:
+        if type(item) == tipo:
+            lista_filtrada.append(item)
+    return lista_filtrada 
+
+def filtrar_nome(lista):
+    filtro = []
+    for elemento in lista:
+        filtro.append(elemento['nome'])
+    return filtro
+
+def formata_nomes(lista_nomes, modo):
+    lista_formatada = []
+    if modo == 'CAIXA ALTA':
+        for item in lista_nomes:
+            lista_formatada.append(item.upper())
+    elif modo == 'CAIXA BAIXA':
+        for item in lista_nomes:
+            lista_formatada.append(item.lower())
+    else:
+        print('Formatação invalida')
+    return lista_formatada
+
