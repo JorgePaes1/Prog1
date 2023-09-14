@@ -60,3 +60,31 @@ def formata_nomes(lista_nomes, modo):
         print('Formatação invalida')
     return lista_formatada
 
+def criar_lista_cadastro(nome, emails):
+    dicionario = []
+    for nome, emails in zip(nome,emails):
+        dicionario.append({
+            'nome' : nome,
+            'emails': emails
+        }
+        )
+    return dicionario
+
+def analise_reais(lista):
+    lista_inteiro = []
+    for numero in range(len(lista)):
+        x1 = numero
+        x2 = str(x1)
+        idx = x2.index('.')
+        x3 = x2[idx+1:]
+        x4 = int(x3)
+        import math as m
+        if x4 % 2 == 0:
+            m.ceil(x4)
+            lista_inteiro.append(x4)
+        if x4 % 2 != 0:
+            m.floor(x4)
+            lista_inteiro.append(x4)
+    return lista_inteiro
+
+            
